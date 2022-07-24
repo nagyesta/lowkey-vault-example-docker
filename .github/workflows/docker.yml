@@ -29,6 +29,7 @@ jobs:
     - name: Stop container with compose
       if: always()
       run: |
+        cd docker-compose
         docker-compose down
     - name: Start Lowkey Vault using Docker command
       run: |
