@@ -16,7 +16,3 @@ while using most of the features it provides.
 * [docker-compose/docker-compose.yml](docker-compose/docker-compose.yml) shows how to start up your container
   using Docker compose including how you can import the [keyvault.json.hbs](docker-compose/keyvault.json.hbs) backup.
 
-### Note
-
-This is my very first Docker project after using it for 2-3 hours, please have mercy when
-commenting on code quality!
