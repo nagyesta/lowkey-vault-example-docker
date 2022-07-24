@@ -1,0 +1,28 @@
+version: "3"
+
+# Use docker-compose as the working directory while using this file!
+
+services:
+  lowkey-vault:
+    container_name: docker-compose-lowkey-vault
+    image: nagyesta/lowkey-vault@sha256:3785158ba7cd13c63652a7709701663a2590543e7a8e3b6e12b3f0e73a1a5249
+    ports:
+      - "8443:8443"
+    volumes:
+      - key-import:/import/:ro
+    environment:
+      # Set arguments for Lowkey Vault configuring key parameters, such as:
+      # - the port we want to use
+      # - the names of the vaults we want to pre-register at start-up
+      # - the debug option controlling request logging
+      # - the name of the import file
+      LOWKEY_ARGS: "--server.port=8443 --LOWKEY_VAULT_NAMES=- --LOWKEY_DEBUG_REQUEST_LOG=false --LOWKEY_IMPORT_LOCATION=/import/keyvault.json.hbs"
+volumes:
+  # Create a volume, allowing us to share the backup file with the container by mounting it
+  key-import:
+    driver: local
+    driver_opts:
+      type: "none"
+      o: "bind"
+      # set the current directory as volume root
+      device: "$PWD/"
