@@ -43,7 +43,15 @@ func TestKeys(t *testing.T) {
 	httpClient := prepareClient()
 	client := azkeys.NewClient("https://localhost:8443",
 		&FakeCredential{},
-		&policy.ClientOptions{Transport: &httpClient})
+		&azkeys.ClientOptions{ClientOptions: struct {
+			Cloud            cloud.Configuration
+			Logging          policy.LogOptions
+			Retry            policy.RetryOptions
+			Telemetry        policy.TelemetryOptions
+			Transport        policy.Transporter
+			PerCallPolicies  []policy.Policy
+			PerRetryPolicies []policy.Policy
+		}{Transport: &httpClient}})
 
 	//when
 	rsaKeyName := latestVersionOfKey(client, "rsa-key").KID.Name()
