@@ -6,11 +6,14 @@
 docker volume create -d local -o type=none -o o=bind -o device=$PWD docker-lowkey-vault-import
 
 # Set arguments for Lowkey Vault configuring key parameters, such as:
-# - the port we want to use
-# - the names of the vaults we want to pre-register at start-up
-# - the debug option controlling request logging
-# - the name of the import file
-export LOWKEY_ARGS="--server.port=8443 --LOWKEY_VAULT_NAMES=- --LOWKEY_DEBUG_REQUEST_LOG=false --LOWKEY_IMPORT_LOCATION=/import/keyvault.json.hbs"
+# - setting the port we want to use: --server.port=8443
+# - disable automatic vault creation: --LOWKEY_VAULT_NAMES=-
+# - turn off debug option controlling request logging: --LOWKEY_DEBUG_REQUEST_LOG=false
+# - specify the name of the import file: --LOWKEY_IMPORT_LOCATION=/import/keyvault.json.hbs
+# - defining the value of {{host}} placeholders in the import: --LOWKEY_IMPORT_TEMPLATE_HOST=localhost
+# - defining the value of {{port}} placeholders in the import: --LOWKEY_IMPORT_TEMPLATE_PORT=8443
+# More details at: https://github.com/nagyesta/lowkey-vault/tree/main/lowkey-vault-app#startup-parameters
+export LOWKEY_ARGS="--server.port=8443 --LOWKEY_VAULT_NAMES=- --LOWKEY_DEBUG_REQUEST_LOG=false --LOWKEY_IMPORT_LOCATION=/import/keyvault.json.hbs --LOWKEY_IMPORT_TEMPLATE_HOST=localhost --LOWKEY_IMPORT_TEMPLATE_PORT=8443"
 
 # Start the container in a detached mode and set up port-forward, pass arguments, and mount the volume
-docker run --rm --name lowkey-docker -d -p 8443:8443 -e LOWKEY_ARGS -v docker-lowkey-vault-import:/import/:ro nagyesta/lowkey-vault:1.8.14
+docker run --rm --name lowkey-docker -d -p 8443:8443 -e LOWKEY_ARGS -v docker-lowkey-vault-import:/import/:ro nagyesta/lowkey-vault:1.11.0@sha256:2262c3bbef13cfe0d1b4e89156c7206f1fe742046ee619ec32b21a242a50a57b
