@@ -39,6 +39,7 @@ jobs:
         docker ps
     - name: Test with go
       run: |
+        go clean -testcache
         go test ./test -v
     - name: Stop container with command
       if: always()
