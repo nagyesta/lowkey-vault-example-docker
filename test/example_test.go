@@ -70,6 +70,28 @@ func TestKeys(t *testing.T) {
 	}
 }
 
+func TestHostName(t *testing.T) {
+	//given
+	conn, err := tls.Dial("tcp", "127.0.0.1:8443", &tls.Config{
+		InsecureSkipVerify: true,
+	})
+	if err != nil {
+		t.Errorf("Server doesn't support SSL certificate err: " + err.Error())
+	}
+
+	//when
+	var commonName = conn.ConnectionState().PeerCertificates[0].Subject.CommonName
+
+	//then
+	if commonName != "example.com" {
+		t.Errorf("got %q, wanted %q", commonName, "example.com")
+	}
+	err = conn.Close()
+	if err != nil {
+		t.Errorf("Connection cannot be closed" + err.Error())
+	}
+}
+
 func secret(client *azsecrets.Client, name string) string {
 	resp, err := client.GetSecret(context.TODO(), name, "", nil)
 	if err != nil {
