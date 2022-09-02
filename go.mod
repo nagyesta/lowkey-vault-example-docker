@@ -3,7 +3,7 @@ module lowkey-vault-example-docker
 go 1.18
 
 require (
-	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.1.2
+	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.1.3
 	github.com/Azure/azure-sdk-for-go/sdk/keyvault/azkeys v0.7.0
 	github.com/Azure/azure-sdk-for-go/sdk/keyvault/azsecrets v0.9.0
 )
