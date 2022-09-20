@@ -27,7 +27,7 @@ func TestSecret(t *testing.T) {
 			Transport        policy.Transporter
 			PerCallPolicies  []policy.Policy
 			PerRetryPolicies []policy.Policy
-		}{Transport: &httpClient}})
+		}{Transport: &httpClient}, DisableChallengeResourceVerification: true})
 
 	//when
 	value := secret(client, "secret-name")
@@ -51,7 +51,7 @@ func TestKeys(t *testing.T) {
 			Transport        policy.Transporter
 			PerCallPolicies  []policy.Policy
 			PerRetryPolicies []policy.Policy
-		}{Transport: &httpClient}})
+		}{Transport: &httpClient}, DisableChallengeResourceVerification: true})
 
 	//when
 	rsaKeyName := latestVersionOfKey(client, "rsa-key").KID.Name()
