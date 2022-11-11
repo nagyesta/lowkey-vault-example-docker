@@ -44,7 +44,7 @@ func TestSecret(t *testing.T) {
 func TestKeys(t *testing.T) {
 	//given
 	httpClient := prepareClient()
-	client := azkeys.NewClient("https://localhost:8443",
+	client, _ := azkeys.NewClient("https://localhost:8443",
 		&FakeCredential{},
 		&azkeys.ClientOptions{ClientOptions: struct {
 			APIVersion       string
