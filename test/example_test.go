@@ -18,7 +18,7 @@ import (
 func TestSecret(t *testing.T) {
 	//given
 	httpClient := prepareClient()
-	client := azsecrets.NewClient("https://localhost:8443",
+	client, _ := azsecrets.NewClient("https://localhost:8443",
 		&FakeCredential{},
 		&azsecrets.ClientOptions{ClientOptions: struct {
 			APIVersion       string
