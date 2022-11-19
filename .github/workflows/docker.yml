@@ -31,6 +31,21 @@ jobs:
       run: |
         cd docker-compose
         docker-compose down
+    - name: Start Lowkey Vault using Docker compose using multi-arch image
+      run: |
+        cd docker-compose-multiarch
+        docker-compose up -d
+        sleep 5
+        docker ps
+    - name: Test with go
+      run: |
+        go clean -testcache
+        go test ./test -v
+    - name: Stop container with compose
+      if: always()
+      run: |
+        cd docker-compose-multiarch
+        docker-compose down
     - name: Start Lowkey Vault using Docker command
       run: |
         cd docker
