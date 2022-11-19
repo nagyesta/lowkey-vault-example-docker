@@ -1,11 +1,11 @@
 version: "3"
 
-# Use docker-compose as the working directory while using this file!
+# Use docker-compose-multiarch as the working directory while using this file!
 
 services:
   lowkey-vault:
-    container_name: docker-compose-lowkey-vault
-    image: nagyesta/lowkey-vault:1.13.33@sha256:9ab136a71d7fdff942fff4e824b4389461b32780392ef8a232370f54c25b8a66
+    container_name: docker-compose-multiarch-lowkey-vault
+    image: nagyesta/lowkey-vault:1.13.33-jammy
     ports:
       - "8443:8443"
     volumes:

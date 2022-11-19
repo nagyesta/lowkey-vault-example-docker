@@ -1,0 +1,233 @@
+{
+  "vaults": [
+    {
+      "attributes": {
+        "baseUri": "https://{{host}}:{{port}}",
+        "recoveryLevel": "Recoverable+Purgeable",
+        "recoverableDays": 90,
+        "created": {{now 0}},
+        "deleted": null
+      },
+      "keys": {
+        "ec-key": {
+          "versions": [
+            {
+              "vaultBaseUri": "https://{{host}}:{{port}}",
+              "entityId": "ec-key",
+              "entityVersion": "00000000000000000000000000000001",
+              "attributes": {
+                "enabled": true,
+                "created": {{now 0}},
+                "updated": {{now 0}},
+                "recoveryLevel": "Recoverable+Purgeable",
+                "exp": {{now 10368000}},
+                "recoverableDays": 90
+              },
+              "tags": {
+                "tag-name-2 ": "tag-value-2",
+                "tag-name-1": "tag value-2"
+              },
+              "managed": false,
+              "keyMaterial": {
+                "crv": "P-256",
+                "d": "JyHHgbFgiUNalP5XP6HBPSvzS3WOA_CKSd1TnLE-kjM",
+                "key_ops": [
+                  "encrypt",
+                  "decrypt",
+                  "sign",
+                  "verify",
+                  "wrapKey",
+                  "unwrapKey"
+                ],
+                "kid": "https://{{host}}:{{port}}/keys/ec-key/00000000000000000000000000000001",
+                "kty": "EC",
+                "x": "AOSAE2RdwyEJD4v-jWZPPrJnKChHREAaNZfy-0Jyq3bU",
+                "y": "O38X9JE9Js8K1SEuGoqVr48QumzePdgi743QjaUb3Bk"
+              }
+            }
+          ],
+          "rotationPolicy": {
+            "id": "https://{{host}}:{{port}}/keys/ec-key/rotationpolicy",
+            "lifetimeActions": [
+              {
+                "trigger": {
+                  "timeBeforeExpiry": "P30D"
+                },
+                "action": {
+                  "type": "notify"
+                }
+              },
+              {
+                "trigger": {
+                  "timeAfterCreate": "P100D"
+                },
+                "action": {
+                  "type": "rotate"
+                }
+              }
+            ],
+            "attributes": {
+              "expiryTime": "P120D",
+              "created": {{now 0}},
+              "updated": {{now 0}}
+            }
+          }
+        },
+        "rsa-key": {
+          "versions": [
+            {
+              "vaultBaseUri": "https://{{host}}:{{port}}",
+              "entityId": "rsa-key",
+              "entityVersion": "00000000000000000000000000000001",
+              "attributes": {
+                "enabled": true,
+                "created": {{now 0}},
+                "updated": {{now 0}},
+                "recoveryLevel": "Recoverable+Purgeable",
+                "exp": {{now 10368000}},
+                "recoverableDays": 90
+              },
+              "tags": {
+                "tag-name-2 ": "tag-value-2",
+                "tag-name-1": "tag value-2"
+              },
+              "managed": false,
+              "keyMaterial": {
+                "d": "LbChX0xInXbJQi8Ayy4lrl82inAm4t4ZwMT8rvBj21A4JjPkkqnye0jND1fsRur049pkcQ0jwADCz1kQMWD5GQsWK3HK-YTARCNysbRN4KlRnBis0AumHammBn70fFD6v6BQql5ZDcKFfCq0Ao22PYjupHzrOIeCzDkhoigvm5MhbVakuM2K4otI7cRuW2Pbs1vEG82umxz__1yOmLBSh-BIEux-RQZMv-0Nn3clXkJknbzll0LERptaKR-CuS0yJFb3PZJOX9Kw_KKnfiuQfRStplaVZd30mn25-OG5i617SmXV4bknMql-g62H8eh04R8yUaYxO-14bQ9q96GgDQ",
+                "dp": "AMWUzoWGW7N5YNGuhcI7A7uJosJnL92X5wW6SrkwXyPJwJiTPzsl-MrEEQYPbMsccvvw4XJh9pgnbAI3NiKnMJ23Qg3whNKHYxFSs4xKgl1eBlq-g9pWMaqhg8kDczfR_rQj_sC4wl_gxv5ilIs2hPPBbPnQS22G7yR6hgznkWOd",
+                "dq": "AIKX0ca5Wac2thYm2aa7ffXfb3Nw7W5lsLTO_5UPFLOb8zj1QsSMzmjM4X1FGnr8b4_jnrULokCRTX4tNhN7ThZE_6ijW7dy9Dx6Z-oshXx8mvKWfZcKVDB5kjSTJrcQROK6nc8874YmRwkpl83_E-RyAAMVi4MX3wuFbWk3Y295",
+                "e": "AQAB",
+                "key_ops": [
+                  "encrypt",
+                  "decrypt",
+                  "sign",
+                  "verify",
+                  "wrapKey",
+                  "unwrapKey"
+                ],
+                "kid": "https://{{host}}:{{port}}/keys/rsa-key/00000000000000000000000000000001",
+                "kty": "RSA",
+                "n": "ALY9Zyf1R4Z225qbgbV6fX3rGv7Hqqq-jorNBz5ietyWT3dUiQWZ94Moz2hDXQMOsHGpqJX4MPChVMYt9GpGngv_7OglXjwKzzNlHRNB2ffK0CTOHEYeWlrkTxZ_Zl3o5ToVmU4mqUwaaZU3LDCTNxCMiYCzutiT4LXqH34Guh5eV_7I7fUaGaYiR3LEYQokN5510tAI3A2w4fPnKuOZUohAaHTGeQZhtFC664F7t6EgliQJBDIA7mJ1H3O6BR797Bq81LdEX_ZnJRwURrvND06LtPWbCCYpKgzrQMVmjEtu33d-WksD-jM3oadJH7s9D5pNIAYPRExVr9VwSNI8zlk",
+                "p": "ANsb0bZCa5ebzGDbHeJJi4DXitnumJYWN1C5ZwidyE-skkkwb-0rrD5mFzXUKEd_SSGEz1nQD1xsUA78D0GHQuDI2vfpI98qfAN0rRgIcyfc4Gyybc5MGdIu95BgC5-UZFnNDapiag_v8z5by2t8JB6gm8j95m7aHfkymPqcDupH",
+                "q": "ANTsb_rFo4daFqcmCH5JpzPGQZdmvzZbwX_1vGosCEVmBUd1_87HfUwQeLcOPTEie_BT2vadVIckmHCrHktdRkvIZmUn2G3xP3R9Q5BYWIHVtSYYM9oKnkUGAPTMsEBYBDJwCxFqwjEADvnQRAQeryOGQc8sjBEJ-XLybXvQfjJf",
+                "qi": "AIi6_-6ikayraHN_i8O0uL3SL4LW2G9ujtC2Qik3Hc2uGjoFsDDEz9Dtfv3xRR3LWu6m3c656-7WtxFaQ9_4YWe_5y8aYQzhXyEpwGu0Qjn_t5ITsL7mBoanQhjUSxjCYeiTKgaimL6gwCZKXvXABpkA5XTmZuAY-sYkpu2euzwr"
+              }
+            }
+          ],
+          "rotationPolicy": {
+            "id": "https://{{host}}:{{port}}/keys/rsa-key/rotationpolicy",
+            "lifetimeActions": [
+              {
+                "trigger": {
+                  "timeBeforeExpiry": "P30D"
+                },
+                "action": {
+                  "type": "notify"
+                }
+              },
+              {
+                "trigger": {
+                  "timeAfterCreate": "P100D"
+                },
+                "action": {
+                  "type": "rotate"
+                }
+              }
+            ],
+            "attributes": {
+              "expiryTime": "P120D",
+              "created": {{now 0}},
+              "updated": {{now 0}}
+            }
+          }
+        },
+        "oct-key": {
+          "versions": [
+            {
+              "vaultBaseUri": "https://{{host}}:{{port}}",
+              "entityId": "oct-key",
+              "entityVersion": "00000000000000000000000000000001",
+              "attributes": {
+                "enabled": true,
+                "created": {{now 0}},
+                "updated": {{now 0}},
+                "recoveryLevel": "Recoverable+Purgeable",
+                "exp": {{now 10368000}},
+                "recoverableDays": 90
+              },
+              "tags": {
+                "tag-name-2 ": "tag-value-2",
+                "tag-name-1": "tag value-2"
+              },
+              "managed": false,
+              "keyMaterial": {
+                "k": "vcOMd-Ou8Y6B5LaACiddhQ",
+                "key_ops": [
+                  "encrypt",
+                  "decrypt",
+                  "sign",
+                  "verify",
+                  "wrapKey",
+                  "unwrapKey"
+                ],
+                "kid": "https://{{host}}:{{port}}/keys/oct-key/00000000000000000000000000000001",
+                "kty": "oct-HSM"
+              }
+            }
+          ],
+          "rotationPolicy": {
+            "id": "https://{{host}}:{{port}}/keys/oct-key/rotationpolicy",
+            "lifetimeActions": [
+              {
+                "trigger": {
+                  "timeBeforeExpiry": "P30D"
+                },
+                "action": {
+                  "type": "notify"
+                }
+              },
+              {
+                "trigger": {
+                  "timeAfterCreate": "P100D"
+                },
+                "action": {
+                  "type": "rotate"
+                }
+              }
+            ],
+            "attributes": {
+              "expiryTime": "P120D",
+              "created": {{now 0}},
+              "updated": {{now 0}}
+            }
+          }
+        }
+      },
+      "secrets": {
+        "secret-name": {
+          "versions": [
+            {
+              "vaultBaseUri": "https://{{host}}:{{port}}",
+              "entityId": "secret-name",
+              "entityVersion": "00000000000000000000000000000001",
+              "attributes": {
+                "enabled": true,
+                "created": {{now 0}},
+                "updated": {{now 0}},
+                "recoveryLevel": "Recoverable+Purgeable",
+                "recoverableDays": 90
+              },
+              "tags": {
+                "tag-name-2 ": "tag-value-2",
+                "tag-name-1": "tag value-2"
+              },
+              "managed": false,
+              "value": "It worked!",
+              "contentType": "text/plain"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
