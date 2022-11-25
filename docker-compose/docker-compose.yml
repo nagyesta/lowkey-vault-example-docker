@@ -5,7 +5,7 @@ version: "3"
 services:
   lowkey-vault:
     container_name: docker-compose-lowkey-vault
-    image: nagyesta/lowkey-vault:1.13.33@sha256:9ab136a71d7fdff942fff4e824b4389461b32780392ef8a232370f54c25b8a66
+    image: nagyesta/lowkey-vault:1.13.38@sha256:d4e7a2b4b619af986a3a36338134a2a6dc56bb334a2e8273f4b4ffbcb69061ec
     ports:
       - "8443:8443"
     volumes:
