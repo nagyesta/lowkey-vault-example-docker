@@ -1,0 +1,28 @@
+name: UpdateImages
+on:
+  push:
+    branches: [ renovate/** ]
+    paths:
+      - 'docker-compose/docker-compose.yml'
+
+permissions: read-all
+
+jobs:
+  build:
+    name: Update images action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PUBLISH_KEY }}
+      - name: "Update versions"
+        run: bash propagete-version-update.sh
+      - name: "Git commit"
+        run: |
+          git config --global user.name 'Esta Nagy'
+          git config --global user.email 'nagyesta@gmail.com'
+          git add docker-compose-multiarch/docker-compose.yml
+          git add docker/example.sh
+          git commit -asm "Updating images {patch}"
+          git push -f --set-upstream origin ${{ github.ref_name }}
