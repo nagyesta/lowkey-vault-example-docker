@@ -12,5 +12,5 @@ rm docker/example.sh.bak
 
 # Update multi-arch variant
 cp docker-compose-multiarch/docker-compose.yml docker-compose-multiarch/docker-compose.yml.bak
-sed "s/lowkey-vault:[0-9]\+.[0-9]\+.[0-9]\+/lowkey-vault:${LOWKEY_VAULT_VERSION}/" < docker-compose-multiarch/docker-compose.yml.bak > docker-compose-multiarch/docker-compose.yml
+sed "s/lowkey-vault:.\+/lowkey-vault:${LOWKEY_VAULT_VERSION}-jammy/" < docker-compose-multiarch/docker-compose.yml.bak > docker-compose-multiarch/docker-compose.yml
 rm docker-compose-multiarch/docker-compose.yml.bak
