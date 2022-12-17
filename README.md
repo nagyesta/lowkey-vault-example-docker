@@ -1,7 +1,7 @@
 ![LowkeyVault](https://raw.githubusercontent.com/nagyesta/lowkey-vault/main/.github/assets/LowkeyVault-logo-full.png)
 
 [![GitHub license](https://img.shields.io/github/license/nagyesta/lowkey-vault-example-docker?color=informational)](https://raw.githubusercontent.com/nagyesta/lowkey-vault-example-docker/main/LICENSE)
-[![Docker test](https://img.shields.io/github/workflow/status/nagyesta/lowkey-vault-example-docker/Docker%20test?logo=github)](https://github.com/nagyesta/lowkey-vault-example-docker/actions/workflows/docker.yml)
+[![Docker test](https://img.shields.io/github/actions/workflow/status/nagyesta/lowkey-vault-example-docker/docker.yml?logo=github&branch=main)](https://github.com/nagyesta/lowkey-vault-example-docker/actions/workflows/docker.yml)
 [![Lowkey secure](https://img.shields.io/badge/lowkey-secure-0066CC)](https://github.com/nagyesta/lowkey-vault)
 
 # Lowkey Vault - Example Docker
