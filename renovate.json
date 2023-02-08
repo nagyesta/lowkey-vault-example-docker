@@ -12,5 +12,6 @@
   },
   "github-actions": {
     "pinDigests": true
-  }
+  },
+  "ignorePaths": [ "docker-compose-multiarch/docker-compose.yml" ]
 }
