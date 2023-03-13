@@ -19,4 +19,4 @@ docker volume create -d local -o type=none -o o=bind -o device=$PWD docker-lowke
 export LOWKEY_ARGS="--server.port=8443 --server.ssl.key-store-type=JKS --server.ssl.key-store=/import/cert.jks --server.ssl.key-store-password=password --LOWKEY_VAULT_NAMES=- --LOWKEY_DEBUG_REQUEST_LOG=false --LOWKEY_IMPORT_LOCATION=/import/keyvault.json.hbs --LOWKEY_IMPORT_TEMPLATE_HOST=localhost --LOWKEY_IMPORT_TEMPLATE_PORT=8443"
 
 # Start the container in a detached mode and set up port-forward, pass arguments, and mount the volume
-docker run --rm --name lowkey-docker -d -p 8443:8443 -e LOWKEY_ARGS -v docker-lowkey-vault-import:/import/:ro nagyesta/lowkey-vault:1.21.0@sha256:1a53c3903a6cbb837725cea9990a35abc1e566e9d2c7ea26f6dc7d92787d1822
+docker run --rm --name lowkey-docker -d -p 8443:8443 -e LOWKEY_ARGS -v docker-lowkey-vault-import:/import/:ro nagyesta/lowkey-vault:1.22.0@sha256:c19e464a61cbc2d82337dc5c41584f611819641e143964e225f08d3d01c0b0aa
