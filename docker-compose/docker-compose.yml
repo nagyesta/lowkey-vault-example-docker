@@ -9,7 +9,7 @@ services:
     ports:
       - "8443:8443"
     volumes:
-      - key-import:/import/:ro
+      - compose-example-import:/import/:ro
     environment:
       # Set arguments for Lowkey Vault configuring key parameters, such as:
       # - setting the port we want to use: --server.port=8443
@@ -34,7 +34,7 @@ services:
         --LOWKEY_IMPORT_TEMPLATE_PORT=8443
 volumes:
   # Create a volume, allowing us to share the backup file with the container by mounting it
-  key-import:
+  compose-example-import:
     driver: local
     driver_opts:
       type: "none"

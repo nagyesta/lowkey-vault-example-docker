@@ -7,6 +7,7 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/cloud"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/tracing"
+	"github.com/Azure/azure-sdk-for-go/sdk/keyvault/azcertificates"
 	"github.com/Azure/azure-sdk-for-go/sdk/keyvault/azkeys"
 	"github.com/Azure/azure-sdk-for-go/sdk/keyvault/azsecrets"
 	"log"
@@ -75,6 +76,38 @@ func TestKeys(t *testing.T) {
 	}
 }
 
+func TestCertificates(t *testing.T) {
+	//given
+	httpClient := prepareClient()
+	client, _ := azcertificates.NewClient("https://localhost:8443",
+		&FakeCredential{},
+		&azcertificates.ClientOptions{ClientOptions: struct {
+			APIVersion       string
+			Cloud            cloud.Configuration
+			Logging          policy.LogOptions
+			Retry            policy.RetryOptions
+			Telemetry        policy.TelemetryOptions
+			TracingProvider  tracing.Provider
+			Transport        policy.Transporter
+			PerCallPolicies  []policy.Policy
+			PerRetryPolicies []policy.Policy
+		}{Transport: &httpClient}, DisableChallengeResourceVerification: true})
+
+	//when
+	rsaCert := latestVersionOfCertificate(client, "rsa-cert")
+
+	//then
+	if *rsaCert.KeyProperties.KeyType != azcertificates.JSONWebKeyTypeRSA {
+		t.Errorf("got %q, wanted %q", *rsaCert.KeyProperties.KeyType, "RSA")
+	}
+	if *rsaCert.X509CertificateProperties.Subject != "CN=example.com" {
+		t.Errorf("got %q, wanted %q", *rsaCert.X509CertificateProperties.Subject, "CN=example.com")
+	}
+	if *rsaCert.SecretProperties.ContentType != "application/x-pkcs12" {
+		t.Errorf("got %q, wanted %q", *rsaCert.SecretProperties.ContentType, "application/x-pkcs12")
+	}
+}
+
 func TestHostName(t *testing.T) {
 	//given
 	conn, err := tls.Dial("tcp", "127.0.0.1:8443", &tls.Config{
@@ -112,6 +145,14 @@ func latestVersionOfKey(client *azkeys.Client, name string) *azkeys.JSONWebKey {
 		log.Fatalf("failed to get key: %v", err)
 	}
 	return key.Key
+}
+
+func latestVersionOfCertificate(client *azcertificates.Client, name string) azcertificates.GetCertificatePolicyResponse {
+	certPolicy, err := client.GetCertificatePolicy(context.TODO(), name, nil)
+	if err != nil {
+		log.Fatalf("failed to get key: %v", err)
+	}
+	return certPolicy
 }
 
 /*
