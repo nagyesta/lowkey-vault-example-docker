@@ -9,12 +9,13 @@ services:
     ports:
       - "8443:8443"
     volumes:
-      - compose-example-import:/import/:ro
+      - example-import:/import/:rw
+      - example-config:/config/:ro
     environment:
       # Set arguments for Lowkey Vault configuring key parameters, such as:
       # - setting the port we want to use: --server.port=8443
       # - overriding the key store type: --server.ssl.key-store-type=JKS
-      # - overriding the key store path: --server.ssl.key-store=/import/cert.jks
+      # - overriding the key store path: --server.ssl.key-store=/config/cert.jks
       # - overriding the key store password: --server.ssl.key-store-password=password
       # - disable automatic vault creation: --LOWKEY_VAULT_NAMES=-
       # - turn off debug option controlling request logging: --LOWKEY_DEBUG_REQUEST_LOG=false
@@ -25,7 +26,7 @@ services:
       LOWKEY_ARGS: > 
         --server.port=8443
         --server.ssl.key-store-type=JKS 
-        --server.ssl.key-store=/import/cert.jks 
+        --server.ssl.key-store=/config/cert.jks 
         --server.ssl.key-store-password=password 
         --LOWKEY_VAULT_NAMES=- 
         --LOWKEY_DEBUG_REQUEST_LOG=false 
@@ -34,10 +35,17 @@ services:
         --LOWKEY_IMPORT_TEMPLATE_PORT=8443
 volumes:
   # Create a volume, allowing us to share the backup file with the container by mounting it
-  compose-example-import:
+  example-import:
     driver: local
     driver_opts:
       type: "none"
       o: "bind"
-      # set the current directory as volume root
-      device: "$PWD/"
+      # set the ./import directory as volume root
+      device: "$PWD/import"
+  example-config:
+    driver: local
+    driver_opts:
+      type: "none"
+      o: "bind"
+      # set the ./config directory as volume root
+      device: "$PWD/config"
