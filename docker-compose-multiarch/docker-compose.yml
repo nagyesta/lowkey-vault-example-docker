@@ -34,7 +34,7 @@ services:
         --LOWKEY_IMPORT_TEMPLATE_HOST=localhost 
         --LOWKEY_IMPORT_TEMPLATE_PORT=8443
   assumed-identity:
-    container_name: assumed-identity-python
+    container_name: docker-compose-multiarch-assumed-identity
     image: nagyesta/assumed-identity:1.1.0
     ports:
       - "8080:8080"
