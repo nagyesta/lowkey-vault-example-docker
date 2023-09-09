@@ -5,9 +5,9 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/tracing"
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-	"github.com/Azure/azure-sdk-for-go/sdk/keyvault/azcertificates"
-	"github.com/Azure/azure-sdk-for-go/sdk/keyvault/azkeys"
-	"github.com/Azure/azure-sdk-for-go/sdk/keyvault/azsecrets"
+	"github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azcertificates"
+	"github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys"
+	"github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets"
 	"testing"
 )
 
@@ -95,7 +95,7 @@ func TestMICertificates(t *testing.T) {
 	rsaCert := latestVersionOfCertificate(client, "rsa-cert")
 
 	//then
-	if *rsaCert.KeyProperties.KeyType != azcertificates.JSONWebKeyTypeRSA {
+	if *rsaCert.KeyProperties.KeyType != azcertificates.KeyTypeRSA {
 		t.Errorf("got %q, wanted %q", *rsaCert.KeyProperties.KeyType, "RSA")
 	}
 	if *rsaCert.X509CertificateProperties.Subject != "CN=example.com" {
