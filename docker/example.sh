@@ -20,7 +20,7 @@ docker volume create -d local -o type=none -o o=bind -o device=$PWD/config docke
 export LOWKEY_ARGS="--server.port=8443 --server.ssl.key-store-type=JKS --server.ssl.key-store=/config/cert.jks --server.ssl.key-store-password=password --LOWKEY_VAULT_NAMES=- --LOWKEY_DEBUG_REQUEST_LOG=false --LOWKEY_IMPORT_LOCATION=/import/keyvault.json.hbs --LOWKEY_IMPORT_TEMPLATE_HOST=localhost --LOWKEY_IMPORT_TEMPLATE_PORT=8443"
 
 # Start the container in a detached mode and set up port-forward, pass arguments, and mount the volume
-docker run --rm --name lowkey-docker -d -p 8443:8443 -e LOWKEY_ARGS -v docker-lv-import:/import/:rw -v docker-lv-config:/config/:ro nagyesta/lowkey-vault:2.1.26@sha256:18654d75d48e5f411dcd0faa712654e2a376e2d327308a41b636c699c9b794c2
+docker run --rm --name lowkey-docker -d -p 8443:8443 -e LOWKEY_ARGS -v docker-lv-import:/import/:rw -v docker-lv-config:/config/:ro nagyesta/lowkey-vault:2.1.47@sha256:d3255e0447373124aa4cdebe978724d8890a03c85515dbae71ea1e84e1bcbf75
 
 # If you want to rely on managed identity, then start up an Assumed Identity container on port 8080
 docker run --rm --name assumed-id-docker -d -p 8080:8080 -e ASSUMED_ID_PORT=8080 nagyesta/assumed-identity:1.1.16@sha256:ecb60ed6d5426d1c67e8d0e61079a9445c688d895023ebed9d8b2324325ca837
