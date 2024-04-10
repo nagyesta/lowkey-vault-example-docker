@@ -22,15 +22,16 @@ func TestSecret(t *testing.T) {
 	client, _ := azsecrets.NewClient("https://localhost:8443",
 		&FakeCredential{},
 		&azsecrets.ClientOptions{ClientOptions: struct {
-			APIVersion       string
-			Cloud            cloud.Configuration
-			Logging          policy.LogOptions
-			Retry            policy.RetryOptions
-			Telemetry        policy.TelemetryOptions
-			TracingProvider  tracing.Provider
-			Transport        policy.Transporter
-			PerCallPolicies  []policy.Policy
-			PerRetryPolicies []policy.Policy
+			APIVersion                      string
+			Cloud                           cloud.Configuration
+			InsecureAllowCredentialWithHTTP bool
+			Logging                         policy.LogOptions
+			Retry                           policy.RetryOptions
+			Telemetry                       policy.TelemetryOptions
+			TracingProvider                 tracing.Provider
+			Transport                       policy.Transporter
+			PerCallPolicies                 []policy.Policy
+			PerRetryPolicies                []policy.Policy
 		}{Transport: &httpClient}, DisableChallengeResourceVerification: true})
 
 	//when
@@ -48,15 +49,16 @@ func TestKeys(t *testing.T) {
 	client, _ := azkeys.NewClient("https://localhost:8443",
 		&FakeCredential{},
 		&azkeys.ClientOptions{ClientOptions: struct {
-			APIVersion       string
-			Cloud            cloud.Configuration
-			Logging          policy.LogOptions
-			Retry            policy.RetryOptions
-			Telemetry        policy.TelemetryOptions
-			TracingProvider  tracing.Provider
-			Transport        policy.Transporter
-			PerCallPolicies  []policy.Policy
-			PerRetryPolicies []policy.Policy
+			APIVersion                      string
+			Cloud                           cloud.Configuration
+			InsecureAllowCredentialWithHTTP bool
+			Logging                         policy.LogOptions
+			Retry                           policy.RetryOptions
+			Telemetry                       policy.TelemetryOptions
+			TracingProvider                 tracing.Provider
+			Transport                       policy.Transporter
+			PerCallPolicies                 []policy.Policy
+			PerRetryPolicies                []policy.Policy
 		}{Transport: &httpClient}, DisableChallengeResourceVerification: true})
 
 	//when
@@ -82,15 +84,16 @@ func TestCertificates(t *testing.T) {
 	client, _ := azcertificates.NewClient("https://localhost:8443",
 		&FakeCredential{},
 		&azcertificates.ClientOptions{ClientOptions: struct {
-			APIVersion       string
-			Cloud            cloud.Configuration
-			Logging          policy.LogOptions
-			Retry            policy.RetryOptions
-			Telemetry        policy.TelemetryOptions
-			TracingProvider  tracing.Provider
-			Transport        policy.Transporter
-			PerCallPolicies  []policy.Policy
-			PerRetryPolicies []policy.Policy
+			APIVersion                      string
+			Cloud                           cloud.Configuration
+			InsecureAllowCredentialWithHTTP bool
+			Logging                         policy.LogOptions
+			Retry                           policy.RetryOptions
+			Telemetry                       policy.TelemetryOptions
+			TracingProvider                 tracing.Provider
+			Transport                       policy.Transporter
+			PerCallPolicies                 []policy.Policy
+			PerRetryPolicies                []policy.Policy
 		}{Transport: &httpClient}, DisableChallengeResourceVerification: true})
 
 	//when
