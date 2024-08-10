@@ -22,12 +22,12 @@ jobs:
             name: Docker Compose with the classic image
             path: docker-compose
             tool: docker-compose
-            stop: docker-compose down
+            stop: docker compose down
           - module: multiarch
             name: Docker Compose with the multiarch image
             path: docker-compose-multiarch
             tool: docker-compose
-            stop: docker-compose down
+            stop: docker compose down
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
@@ -40,7 +40,7 @@ jobs:
       run: |
         cd ${{ matrix.path }}
         echo "Running ${{ matrix.name }}"
-        docker-compose up -d
+        docker compose up -d
         sleep 5
         docker ps
         if [ $(docker ps | grep nagyesta | wc -l) -ne 2 ]; then echo "ERROR: Some containers are not running"; exit 1; fi
