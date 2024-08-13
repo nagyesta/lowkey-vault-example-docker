@@ -35,7 +35,7 @@ services:
         --LOWKEY_IMPORT_TEMPLATE_PORT=8443
   assumed-identity:
     container_name: docker-compose-assumed-identity
-    image: nagyesta/assumed-identity:1.2.16@sha256:af0f02eb1cd1608a5254761f9817666a6020abe7c66dff3953aba5e904fdb72e
+    image: nagyesta/assumed-identity:1.2.42@sha256:c4a138f89f533099d906aa60387b98f68d89f0f16c69cd696447790d81a0e6cb
     ports:
       - "8080:8080"
     environment:
