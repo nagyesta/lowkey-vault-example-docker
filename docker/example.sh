@@ -23,4 +23,4 @@ export LOWKEY_ARGS="--server.port=8443 --server.ssl.key-store-type=JKS --server.
 docker run --rm --name lowkey-docker -d -p 8443:8443 -e LOWKEY_ARGS -v docker-lv-import:/import/:rw -v docker-lv-config:/config/:ro nagyesta/lowkey-vault:2.4.109@sha256:cb982f793e29d8319edbcecfb3d701a74c662735bf045cfd42b4964a9ade419b
 
 # If you want to rely on managed identity, then start up an Assumed Identity container on port 8080
-docker run --rm --name assumed-id-docker -d -p 8080:8080 -e ASSUMED_ID_PORT=8080 nagyesta/assumed-identity:1.2.16@sha256:af0f02eb1cd1608a5254761f9817666a6020abe7c66dff3953aba5e904fdb72e
+docker run --rm --name assumed-id-docker -d -p 8080:8080 -e ASSUMED_ID_PORT=8080 nagyesta/assumed-identity:1.2.42@sha256:c4a138f89f533099d906aa60387b98f68d89f0f16c69cd696447790d81a0e6cb
