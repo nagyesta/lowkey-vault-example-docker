@@ -1,17 +1,24 @@
 {
   "extends": [
-    "config:base",
+    "config:recommended",
     ":gitSignOff"
   ],
   "assignees": [
     "nagyesta"
   ],
   "assigneesSampleSize": 1,
-  "docker": {
-    "pinDigests": true
-  },
   "github-actions": {
     "pinDigests": true
   },
-  "ignorePaths": [ "docker-compose-multiarch/docker-compose.yml" ]
+  "ignorePaths": [
+    "docker-compose-multiarch/docker-compose.yml"
+  ],
+  "packageRules": [
+    {
+      "matchCategories": [
+        "docker"
+      ],
+      "pinDigests": true
+    }
+  ]
 }
