@@ -66,6 +66,8 @@ github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azcertificates v1.2.0 h1
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azcertificates v1.2.0/go.mod h1:r+2gKvCfqxaDW1a9mtIH9vJ0lT0ULJrKBGwbCPPjEwg=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azcertificates v1.3.0 h1:/eDk/OHTzMWrfI22PrUIVhRarQJFDzGkOXO3wtDcPlw=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azcertificates v1.3.0/go.mod h1:1lU5bExBU6ZracUdREjnlgMa9nfgzxTS0w8I7b1fhCY=
+github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azcertificates v1.3.1 h1:HUJQzFYTv7t3V1dxPms52eEgl0l9xCNqutDrY45Lvmw=
+github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azcertificates v1.3.1/go.mod h1:ig/8nSkzmfxm5QGeIy5JYIEj8JEFy5JxvY3OB1YNRC4=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.0.1 h1:MyVTgWR8qd/Jw1Le0NZebGBUCLbtak3bJ3z1OlqZBpw=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.0.1/go.mod h1:GpPjLhVR9dnUoJMyHWSPy71xY9/lcmpzIPZXmF0FCVY=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.1.0 h1:DRiANoJTiW6obBQe3SqZizkuV1PEgfiiGivmVocDy64=
@@ -74,6 +76,8 @@ github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.2.0 h1:fKSH2aG
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.2.0/go.mod h1:TPR8de/4RyFL97NXnpjtIaLZFR0eQxlQeXbk7EKIrbw=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.3.0 h1:7rKG7UmnrxX4N53TFhkYqjc+kVUZuw0fL8I3Fh+Ld9E=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.3.0/go.mod h1:Wjo+24QJVhhl/L7jy6w9yzFF2yDOf3cKECAa8ecf9vE=
+github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.3.1 h1:Wgf5rZba3YZqeTNJPtvqZoBu1sBN/L4sry+u2U3Y75w=
+github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.3.1/go.mod h1:xxCBG/f/4Vbmh2XQJBsOmNdxWUY5j/s27jujKPbQf14=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.0.1 h1:8TkzQBrN9PWIwo7ekdd696KpC6IfTltV2/F8qKKBWik=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.0.1/go.mod h1:aprFpXPQiTyG5Rkz6Ot5pvU6y6YKg/AKYOcLCoxN0bk=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.1.0 h1:h4Zxgmi9oyZL2l8jeg1iRTqPloHktywWcu0nlJmo1tA=
@@ -82,10 +86,14 @@ github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.2.0 h1:TkNl
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.2.0/go.mod h1:ukmL56lWl275SgNFijuwx0Wv6n6HmzzpPWW4kMoy/wY=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.3.0 h1:WLUIpeyv04H0RCcQHaA4TNoyrQ39Ox7V+re+iaqzTe0=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.3.0/go.mod h1:hd8hTTIY3VmUVPRHNH7GVCHO3SHgXkJKZHReby/bnUQ=
+github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.3.1 h1:mrkDCdkMsD4l9wjFGhofFHFrV43Y3c53RSLKOCJ5+Ow=
+github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets v1.3.1/go.mod h1:hPv41DbqMmnxcGralanA/kVlfdH5jv3T4LxGku2E1BY=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/internal v1.0.0 h1:D3occbWoio4EBLkbkevetNMAVX197GkzbUMtqjGWn80=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/internal v1.0.0/go.mod h1:bTSOgj05NGRuHHhQwAdPnYr9TOdNmKlZTgGLL6nyAdI=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/internal v1.1.0 h1:eXnN9kaS8TiDwXjoie3hMRLuwdUBUMW9KRgOqB3mCaw=
 github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/internal v1.1.0/go.mod h1:XIpam8wumeZ5rVMuhdDQLMfIPDf1WO3IzrCRO3e3e3o=
+github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/internal v1.1.1 h1:bFWuoEKg+gImo7pvkiQEFAc8ocibADgXeiLAxWhWmkI=
+github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/internal v1.1.1/go.mod h1:Vih/3yc6yac2JzU4hzpaDupBJP0Flaia9rXXrU8xyww=
 github.com/AzureAD/microsoft-authentication-library-for-go v1.1.1 h1:WpB/QDNLpMw72xHJc34BNNykqSOeEJDAWkhf0u12/Jk=
 github.com/AzureAD/microsoft-authentication-library-for-go v1.1.1/go.mod h1:wP83P5OoQ5p6ip3ScPr0BAq0BvuPAvacpEuSzyouqAI=
 github.com/AzureAD/microsoft-authentication-library-for-go v1.2.1 h1:DzHpqpoJVaCgOUdVHxE8QB52S6NiVdDQvGlny1qvPqA=
