@@ -5,7 +5,7 @@ version: "3"
 services:
   lowkey-vault:
     container_name: docker-compose-multiarch-lowkey-vault
-    image: nagyesta/lowkey-vault:4.0.49-ubi9-minimal
+    image: nagyesta/lowkey-vault:4.0.67-ubi9-minimal
     ports:
       - "8443:8443"
     volumes:
@@ -35,7 +35,7 @@ services:
         --LOWKEY_IMPORT_TEMPLATE_PORT=8443
   assumed-identity:
     container_name: docker-compose-multiarch-assumed-identity
-    image: nagyesta/assumed-identity:2.1.17
+    image: nagyesta/assumed-identity:2.1.25
     ports:
       - "8080:8080"
     environment:
