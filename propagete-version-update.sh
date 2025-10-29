@@ -18,7 +18,7 @@ rm docker/example.sh.bak
 
 # Update multi-arch variant
 cp docker-compose-multiarch/docker-compose.yml docker-compose-multiarch/docker-compose.yml.bak
-sed "s/lowkey-vault:.\+/lowkey-vault:${LOWKEY_VAULT_VERSION}-ubi9-minimal/" < docker-compose-multiarch/docker-compose.yml.bak > docker-compose-multiarch/docker-compose.yml.tmp
+sed "s/lowkey-vault:.\+/lowkey-vault:${LOWKEY_VAULT_VERSION}-ubi10-minimal/" < docker-compose-multiarch/docker-compose.yml.bak > docker-compose-multiarch/docker-compose.yml.tmp
 sed "s/assumed-identity:.\+/assumed-identity:${ASSUMED_ID_VERSION}/" < docker-compose-multiarch/docker-compose.yml.tmp > docker-compose-multiarch/docker-compose.yml
 rm docker-compose-multiarch/docker-compose.yml.tmp
 rm docker-compose-multiarch/docker-compose.yml.bak
