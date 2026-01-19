@@ -117,7 +117,7 @@ func TestHostName(t *testing.T) {
 		InsecureSkipVerify: true,
 	})
 	if err != nil {
-		t.Errorf("Server doesn't support SSL certificate err: " + err.Error())
+		t.Errorf("Server doesn't support SSL certificate err: %v", err)
 	}
 
 	//when
@@ -129,7 +129,7 @@ func TestHostName(t *testing.T) {
 	}
 	err = conn.Close()
 	if err != nil {
-		t.Errorf("Connection cannot be closed" + err.Error())
+		t.Errorf("Connection cannot be closed: %v", err)
 	}
 }
 
