@@ -2,7 +2,7 @@ module lowkey-vault-example-docker
 
 go 1.24.0
 
-toolchain go1.24.12
+toolchain go1.25.6
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.21.0
