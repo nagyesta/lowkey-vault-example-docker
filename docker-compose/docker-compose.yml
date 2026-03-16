@@ -5,7 +5,7 @@ version: "3"
 services:
   lowkey-vault:
     container_name: docker-compose-lowkey-vault
-    image: nagyesta/lowkey-vault:7.1.13@sha256:45019f39785d94858ec23c1cf88639651bc108c201d45984b2441f0cc139b3b3
+    image: nagyesta/lowkey-vault:7.1.32@sha256:281cf30611fc314de18d30894d1bc3d3100ffbf02039a11a1d7e8c4a4952e59d
     ports:
       - "8443:8443"
     volumes:
@@ -35,7 +35,7 @@ services:
         --LOWKEY_IMPORT_TEMPLATE_PORT=8443
   assumed-identity:
     container_name: docker-compose-assumed-identity
-    image: nagyesta/assumed-identity:2.2.13@sha256:47c0df75c30c81a9c838f96da04f5098fabf18b21ec4e289dabb41cb62370807
+    image: nagyesta/assumed-identity:2.2.22@sha256:c63c1fe415d510bbeadc47b622ac9f651ee701ccb11039e5e37c42d118e24ef4
     ports:
       - "8080:8080"
     environment:
