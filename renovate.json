@@ -12,15 +12,12 @@
   "github-actions": {
     "pinDigests": true
   },
-  "ignorePaths": [
-    "docker-compose-multiarch/docker-compose.yml"
-  ],
   "packageRules": [
     {
       "matchCategories": [
         "docker"
       ],
-      "pinDigests": true
+      "pinDigests": false
     }
   ]
 }
